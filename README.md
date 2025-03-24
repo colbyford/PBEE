@@ -181,6 +181,32 @@ The following is an example of a Rosetta XML script used in the PBEE. In general
 
 In summary, the XML script represents a detailed plan for protein structure analysis and manipulation using Rosetta. It outlines a series of steps aimed at evaluating protein chain interactions and improving structure quality.
 
+## Docker
+
+You can also run the model using Docker:
+
+1. Build the Docker image locally:
+
+   ```bash
+   docker build -t pbee .
+   ```
+
+   Or pull the pre-built image from Docker Hub:
+
+   ```bash
+   docker pull cford38/pbee:latest
+   ```
+
+2. Run the Docker container:
+
+   ```bash
+   docker run --gpus all --rm --name pbee -it pbee /bin/bash
+   # docker run --gpus all --rm --name pbee -it cford38/pbee:latest /bin/bash
+   ```
+> [!NOTE]
+> This image does not include all of the model weights, which will be downloaded the first time you run PBEE inside in the container.
+
+
 ## Citation
 If you use our code or ML model, please cite our work:
 ```
