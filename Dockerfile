@@ -27,7 +27,7 @@ WORKDIR /software/PBEE
 ## Create conda environment
 RUN conda env create -f environment.yml
 
-## Install PyRosetta from environment
+## Install PyRosetta in environment
 RUN /opt/conda/envs/pbee_env/bin/python3 -m pip install pyrosetta_installer && \
     /opt/conda/envs/pbee_env/bin/python3 -c 'import pyrosetta_installer; pyrosetta_installer.install_pyrosetta()'
 
