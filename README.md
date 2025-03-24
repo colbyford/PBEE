@@ -200,11 +200,11 @@ You can also run the model using Docker:
 2. Run the Docker container:
 
    ```bash
-   docker run --gpus all --rm --name pbee -it pbee /bin/bash
+   docker run --gpus all --rm -v ./trainedmodels:/software/PBEE/trainedmodels --name pbee -it pbee /bin/bash
    # docker run --gpus all --rm --name pbee -it cford38/pbee:latest /bin/bash
    ```
 > [!NOTE]
-> This image does not include all of the model weights, which will be downloaded the first time you run PBEE inside in the container.
+> This image does not include all of the model weights. You can download them locally and mount the directory in the container under `/software/PBEE/trainedmodels`.
 
 
 ## Citation
